@@ -1,7 +1,7 @@
 module Twitter
   module Bootstrap
     module Rails
-      VERSION = "2.0.9"
+      VERSION = "2.0.12"
     end
   end
 end
