@@ -51,12 +51,16 @@
 
       clearMenus()
 
-      if (!isActive) {
-        if ('ontouchstart' in document.documentElement) {
-          // if mobile we we use a backdrop because click events don't delegate
-          $('<div class="dropdown-backdrop"/>').insertBefore($(this)).on('click', clearMenus)
+      if ($("footer").length > 0) {
+        var $ownPosition = $this.offset()
+        var $footerPosition = $("footer").offset()
+        var $menuHeight = $parent.find(".dropdown-menu").outerHeight();
+        if ($ownPosition.top + $menuHeight + 20 > $footerPosition.top) {
+          $parent.addClass("dropup");
         }
-        $parent.toggleClass('open')
+        else {
+          $parent.removeClass("dropup")
+        }
       }
 
       $this.focus()
