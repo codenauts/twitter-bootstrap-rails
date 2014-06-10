@@ -60,18 +60,6 @@
 
       clearMenus()
 
-      if ($("footer").length > 0) {
-        var $ownPosition = $this.offset()
-        var $footerPosition = $("footer").offset()
-        var $menuHeight = $parent.find(".dropdown-menu").outerHeight();
-        if ($ownPosition.top + $menuHeight + 20 > $footerPosition.top) {
-          $parent.addClass("dropup");
-        }
-        else {
-          $parent.removeClass("dropup")
-        }
-      }
-
       if (!isActive) $parent.toggleClass('open')
 
       return false
